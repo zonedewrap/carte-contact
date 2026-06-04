@@ -26,7 +26,16 @@ padding:0;
 box-sizing:border-box;
 font-family:'Roboto',sans-serif;
 }
+<script>
+const params = new URLSearchParams(window.location.search);
+const source = params.get('source');
 
+if (source) {
+  gtag('event', 'visite_qr', {
+    source_qr: source
+  });
+}
+</script>
 body{
 background:#f3f3f3;
 color:#222;
